@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var massMark = 95
+        var heightMark = 1.88
+        var massJohn = 85
+        var heightJohn = 1.67
+        var markHigherBMI
+
+        function BMI(mass, height) {
+            return (mass / (height * height)).toFixed(1)
+        }
+        BMIMark = BMI(massMark, heightMark)
+        BMIJohn = BMI(massJohn, heightJohn)
+        console.log(BMIMark)
+        console.log(BMIJohn)
+        if (BMIMark > BMIJohn)
+            console.log("Mark's BMI is higher than John's!")
+        else
+            console.log("John's BMI is higher than Mark's!")
+    </script>
+</body>
+
+</html>

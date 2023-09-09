@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Dolphins = [97, 112, 101]
+        var Koalas = [109, 95, 123]
+        function DTB(array) {
+            var s = array.length
+            var T = 0
+            array.forEach(element => {
+                T = T + element
+            });
+            return T/s
+        }
+        var TB_Dolphins = DTB(Dolphins).toFixed(2)
+        var TB_Koalas = DTB(Koalas).toFixed(2)
+        if(TB_Dolphins>=100 || TB_Koalas>=100){
+            if(TB_Dolphins>TB_Koalas)
+            {
+                console.log("Dolphins Thắng với "+ TB_Dolphins  +" điểm so với Koalas "  +TB_Koalas +" điểm" )
+            }
+            else
+                if(TB_Dolphins<TB_Koalas)
+                {
+                    console.log("Koalas Thắng với "+ TB_Koalas  +" điểm so với Dolphins " + TB_Dolphins + " điểm")
+                }
+            else
+                console.log("Koalas hoà Dolphins với "+ TB_Koalas  +" điểm ")
+        }
+        else
+            console.log("Không đội nào thắng")
+    </script>
+</body>
+
+</html>

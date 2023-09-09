@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bills = [125, 555, 44]
+        function calcTip(array){
+            var m_tip = 0
+            var total = 0
+            var tips = []
+            array.forEach( m => {
+                if(m>=50 && m<=300){
+                m_tip = m*15/100
+                tips.push(m_tip)
+            }
+            else
+                {
+                m_tip = m*20/100
+                tips.push(m_tip)
+                
+                }
+            });
+            return console.log(tips)
+        }   
+        calcTip(bills)
+    </script>
+</body>
+</html>

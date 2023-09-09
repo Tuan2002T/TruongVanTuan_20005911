@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Mark = {
+            fullname: "Mark Mille",
+            mass: 78,
+            height: 1.69,
+        }
+        var John = {
+            fullname: "John Smith",
+            mass:92,
+            height: 1.95,
+        }
+        var A1 = calcBMI(Mark.mass, Mark.height)
+        var A2 = calcBMI(John.mass, John.height)
+
+        Mark.BMI = A1
+        John.BMI = A2
+
+        function calcBMI(mass, height) {
+            var t = (mass / (height * height)).toFixed(1) 
+            Mark.p
+            return t
+        }
+
+        if (Mark.BMI > John.BMI){
+
+            console.log("Mark's BMI ("+Mark.BMI+") is higher than John's ("+John.BMI+")!")}
+        else
+        console.log("John's BMI ("+John.BMI+") is higher than Mark's ("+Mark.BMI+")!")
+    </script>
+</body>
+</html>

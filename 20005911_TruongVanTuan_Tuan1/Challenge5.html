@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Dolphins = [85, 54, 41]
+        var Koalas = [23, 34, 27]
+        function calcAverage(array) {
+            var s = array.length
+            var T = 0
+            array.forEach(element => {
+                T = T + element
+            });
+            return T/s
+        }
+        function checkWinner(avgDolhins, avgKoalas){
+            var TB_Dolphins = calcAverage(avgDolhins).toFixed(2)
+            var TB_Koalas = calcAverage(avgKoalas).toFixed(2)
+            if(Math.floor(TB_Dolphins/TB_Koalas) >=2 || Math.floor(TB_Koalas/TB_Dolphins) >=2){
+                if(avgDolhins>avgKoalas)
+                {
+                    console.log("Dolphins Thắng ("+ TB_Dolphins  +" vs "  +TB_Koalas +")" )
+                }
+                else
+                    if(avgDolhins<avgKoalas)
+                    {
+                        console.log("Koalas Thắng ("+ TB_Koalas  +" vs "  +TB_Dolphins +")" )
+                    }
+                else
+                    console.log("Koalas hoà Dolphins với "+ TB_Koalas  +" điểm ")
+            }
+            else
+                console.log("Không đội nào thắng")
+            }
+            checkWinner(Dolphins,Koalas)
+    </script>
+</body>
+</html>

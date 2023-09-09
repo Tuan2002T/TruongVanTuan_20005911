@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bill = 430
+        function Tip(m){
+            var m_tip = 0
+            var total = 0
+            if(m>=50 && m<=300){
+                m_tip = m*15/100
+                total = m + m_tip
+                return console.log("The bill was "+ m +", the tip was "+ m_tip +", and the total value " + total)
+            }
+            else
+                {
+                    m_tip = m*20/100
+                total = m + m_tip
+                return console.log("The bill was "+ m +", the tip was "+ m_tip +", and the total value " + total)
+                }
+            
+        }
+        Tip(bill)
+    </script>
+</body>
+</html>
