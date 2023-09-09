@@ -7,26 +7,41 @@
 </head>
 <body>
     <script>
-        var bills = [125, 555, 44]
-        function calcTip(array){
+        var bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+        var tips = []
+        var totals = []
+        function calcTip(m){
             var m_tip = 0
-            var total = 0
             var tips = []
-            array.forEach( m => {
                 if(m>=50 && m<=300){
                 m_tip = m*15/100
-                tips.push(m_tip)
             }
             else
                 {
                 m_tip = m*20/100
-                tips.push(m_tip)
-                
                 }
-            });
-            return console.log(tips)
+            
+            return m_tip
         }   
-        calcTip(bills)
+        bills.forEach(element => {
+            var T = calcTip(element)
+            var total = element + T
+            tips.push(T)
+            totals.push(total)
+        });
+        console.log(tips)
+        console.log(totals)
+
+        function calcAverage(arr){
+            var sum = 0
+            var t = 0
+            arr.forEach(element => {
+                sum = sum + element
+                t++
+            });
+            return sum/t
+        }
+       console.log( calcAverage(tips))
     </script>
 </body>
 </html>
