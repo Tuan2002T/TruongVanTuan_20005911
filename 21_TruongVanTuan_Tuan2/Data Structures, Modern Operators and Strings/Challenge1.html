@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var game = {
+        players1 : {
+            name : ' Bayern Munich ',
+            gk : 'Neuer',
+            fieldPlayers : ['Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski']
+        },
+        players2 : {
+            name : ' Borussia Dortmund ',
+            gk : 'Burki',
+            fieldPlayers : ['Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze']
+        },
+        allPlayers: [
+        'Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski',
+        'Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze'
+        ],
+        score: '4:0',
+        scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels']
+        };
+
+
+        var players1 = [game.allPlayers.slice(0, 11)]
+        var players2 = [game.allPlayers.slice( 11, 22)]
+        var player1Final = [game.players1.fieldPlayers,  'Thiago', 'Coutinho', 'Perisic']
+        // const {odds : {team1, x: draw, team2}} = game;
+        console.log(players1);
+        function printGoals(players){
+            var goals = players.filter(player => game.scored.includes(player)).length;
+            console.log(`${players.length} goals were scored`);
+        }
+        printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+    </script>
+</body>
+</html>
