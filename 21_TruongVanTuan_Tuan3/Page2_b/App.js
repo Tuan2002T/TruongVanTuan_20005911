@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
 
 export default function App() {
   return (
@@ -13,13 +13,7 @@ export default function App() {
         require('./assets/eye.png')
       } />
 
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        borderBottom: '1px solid #d9d9d9',
-        padding: 10,
-        marginBottom: 20,
-      }}>
+      <View style={styles.inputUS}>
         <Image style={{
           width: 30,
           height: 30,
@@ -27,21 +21,16 @@ export default function App() {
           require('./assets/user.png')
         } />
 
-        <input style={{
+        <TextInput style={{
           width: 280,
           height: 30,
-          border: 'none',
+          // border: '#fff',
           marginLeft: 10,
           fontSize: 16,
         }} type="text" placeholder="Please input username" />
-      </div>
+      </View>
 
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        borderBottom: '1px solid #d9d9d9',
-        padding: 10,
-      }}>
+      <View style={styles.inputPass}>
         <Image style={{
           width: 30,
           height: 30,
@@ -49,26 +38,20 @@ export default function App() {
           require('./assets/lock.png')
         } />
 
-        <input style={{
+        <TextInput style={{
           width: 280,
           height: 30,
           border: 'none',
           marginLeft: 10,
           fontSize: 16,
         }} type="text" placeholder="Please input password" />
-      </div>
-
-      <input style={{
-        width: 340,
-        height: 45,
-        backgroundColor: '#1890ff',
-        color: '#fff',
-        border: 'none',
-        borderRadius: 8,
-        marginTop: 50,
-        fontSize: 16,
-      }} type='submit' value='LOGIN' />
-      <div style={{
+      </View>
+      <TouchableHighlight>
+        <View style={styles.btnLogin}>
+          <Text style={styles.Text}>LOGIN</Text>
+        </View>
+      </TouchableHighlight>
+      <View style={{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -84,8 +67,10 @@ export default function App() {
           marginTop: 20,
           fontSize: 16,
         }}>Forgot password?</Text>
-      </div>
-      <div>
+      </View>
+      <View style={{
+        flexDirection: 'row',
+      }}>
         <Text style={{
           textDecorationLine: 'line-through',
         }}>                      </Text>
@@ -99,10 +84,10 @@ export default function App() {
         <Text style={{
           textDecorationLine: 'line-through',
         }}>                      </Text>
-      </div>
+      </View>
 
 
-      <div style={{
+      <View style={{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -136,7 +121,7 @@ export default function App() {
           source={
             require('./assets/FB.png')
           } />
-      </div>
+      </View>
     </View>
   );
 }
@@ -148,4 +133,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // justifyContent: 'center',
   },
+  inputUS: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: '#d9d9d9',
+    padding: 10,
+    marginBottom: 20,
+  },
+  inputPass: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: '#d9d9d9',
+    padding: 10,
+  },
+  btnLogin:{
+    width: 340,
+        height: 45,
+        backgroundColor: '#1890ff',
+        color: '#fff',
+        border: 'none',
+        borderRadius: 8,
+        marginTop: 50,
+        fontSize: 16,
+        justifyContent: 'center',
+  },
+  Text: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#fff',
+  }
 });

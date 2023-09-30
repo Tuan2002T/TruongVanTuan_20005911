@@ -1,112 +1,110 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+// import { RadioButton } from 'react-native-paper';
+import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{
-        fontSize: 30,
-        fontWeight: 'bold',
-        marginTop: 40,
-        marginBottom: 40,
-      }}>REGISTER</Text>
-      <input style={styles1.formRegister} placeholder='Name' type='text'/>
-      <input style={styles1.formRegister} placeholder='Phone' type='text'/>
-      <input style={styles1.formRegister} placeholder='Email' type='text'/>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center', 
-        width: 340,
-        height: 30,
-       margin: 10,
-       padding: 10,
-       backgroundColor: '#C9E0D0',
-      }}>
-            <input style={{
-              width: 290,
-              height: 30,
-              fontSize: 20,
-              backgroundColor: '#C9E0D0',
-              border: 'none',
-            }} placeholder='Password' type='text'/>
-            <Image style={{
-              width: 30,
-              height: 30,
-            }} source={
-              require('./assets/eye.png')
-              }/>
-      </div>
-      <input style={styles1.formRegister} placeholder='Birtday' type='text'/>
+      <Text style={styles.title}>REGISTER</Text>
+      <TextInput style={styles.formRegister} placeholder='Name' type='text' />
+      <TextInput style={styles.formRegister} placeholder='Phone' type='text' />
+      <TextInput style={styles.formRegister} placeholder='Email' type='text' />
+      <View style={styles.inputPass}>
+        <TextInput style={styles.TextPass} placeholder='Password' type='text' />
+        <Image style={{
+          width: 30,
+          height: 30,
+        }} source={
+          require('./assets/eye.png')
+        } />
+      </View >
+      <TextInput style={styles.formRegister} placeholder='Birtday' type='text' />
 
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        padding: 20,
-      }}>
-            <div style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  marginLeft: -170,
-                }}>
-                <input name='check' checked style={{
-                width: 25,
-                height: 25,
-                }} type='radio'/> 
-                <label style={{
-                    marginTop: 5,
-                    marginLeft: 10,
-                    marginRight: 10,
-                }}>Male</label>
-            </div>
-            <div style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}>
-                <input name='check' style={{
-                width: 25,
-                height: 25,
-                }} type='radio'/> 
-                <label style={{
-                    marginTop: 5,
-                    marginLeft: 10,
-                    marginRight: 10,
-                }}>Female</label>
-            </div>
-      </div>
-      <input style={{
+      <View style={{
+        textAlign: 'left',
         width: 360,
-        height: 40,
-        margin: 10,
         padding: 10,
-        fontSize: 16,
-        backgroundColor: '#C34E3B',
-        fontWeight: 'bold',
-        color: '#fff',
-        border: 'none',
-      }} type='submit' value='REGISTER'/>
-      <Text>When you agree to terms and conditions</Text>
-    </View>
-  );
-}
+      }}>
+      <RadioForm
+        buttonColor={'#000000'}
+        selectedButtonColor={'#000000'}
+        radio_props={radio_props}
+        initial={0}
+        formHorizontal={true}
 
+      />
+      </View>
+      
+      <TouchableHighlight>
+        <View style={styles.btnRegisTer}>
+          <Text style={styles.Text}>REGISTER</Text>
+        </View>
+      </TouchableHighlight>
+      <Text>When you agree to terms and conditions</Text>
+    
+    </View>
+
+  );
+}   
+var radio_props = [
+  { label: 'Male   ', value: 0 },
+  { label: 'Female', value: 1 },
+  
+];
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-});
-const styles1 = StyleSheet.create({
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 40,
+    marginBottom: 40,
+  },
   formRegister: {
-    width: 340,
-    height: 30,
+    width: 360,
+    height: 50,
     margin: 10,
     padding: 10,
     fontSize: 20,
     backgroundColor: '#C9E0D0',
     border: 'none',
+  },
+  inputPass: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 360,
+    height: 50,
+    margin: 10,
+    padding: 10,
+    backgroundColor: '#C9E0D0',
+  },
+  TextPass: {
+    width: 290,
+    height: 30,
+    fontSize: 20,
+    backgroundColor: '#C9E0D0',
+    border: 'none',
+  },
+  btnRegisTer: {
+    width: 360,
+    height: 50,
+    backgroundColor: '#C34E3B',
+    fontWeight: 'bold',
+    color: '#fff',
+    border: 'none',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  Text: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
   },
 });
