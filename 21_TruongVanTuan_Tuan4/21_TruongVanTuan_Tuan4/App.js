@@ -16,9 +16,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      screenOptions={{ tabBarIcon: () => null }}
       tabBarOptions={{
-        tabStyle: { flexDirection: 'row', justifyContent: 'center' }, // Đặt chiều dọc và căn giữa chữ
         labelStyle: {
           textAlign: 'center',
           fontSize: 10,
