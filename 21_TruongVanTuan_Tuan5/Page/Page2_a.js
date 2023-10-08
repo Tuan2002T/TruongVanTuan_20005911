@@ -1,8 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity  } from 'react-native';
 
 export default function Page2_a() {
+  const input1 = 'a'; 
+  const input2 = '123';
+  const [count, setCount] = useState("");
+  const [inputValue, setInputValue] = useState('');
+  const [inputValue1, setInputValue1] = useState('');
+function check(){
+  if(input1 !== inputValue && input2 !== inputValue1){
+    alert('Đăng nhập thất bại');
+  }
+  else{
+    alert('Đăng nhập thành công');
+  }
+}
   return (
+    
     <View style={styles.container}>
       <Text
         style={styles.title}
@@ -13,7 +27,7 @@ export default function Page2_a() {
           source={
             require('../assets/Page2_a/user.png')
           } />
-        <TextInput style={styles.name} type='text' placeholder='Name' />
+        <TextInput value={inputValue}  onChangeText={text => setInputValue(text)} style={styles.name} type='text' placeholder='Name' />
       </View>
       <View style={styles.inputpass}>
         <Image
@@ -21,26 +35,28 @@ export default function Page2_a() {
           source={
             require('../assets/Page2_a/lock.png')
           } />
-        <TextInput style={styles.pass} type='text' placeholder='Password' />
+        <TextInput value={inputValue1} onChangeText={text => setInputValue1(text)} style={styles.pass} type='text' placeholder='Password' />
         <Image
           style={{ width: 30, height: 30, marginRight: 10 }}
           source={
             require('../assets/Page2_a/eye.png')
           } />
       </View>
-      <TouchableHighlight>
-        <View style={styles.btnLogin}>
+      <TouchableOpacity onPress={check} >
+        <View style={styles.btnLogin}  >
           <Text style={styles.Text}>LOGIN</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
       <Text style={{
         marginTop: 50,
         fontSize: 20,
         fontWeight: 'bold',
       }}>CREATE ACCOUNT</Text>
     </View>
+    
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {

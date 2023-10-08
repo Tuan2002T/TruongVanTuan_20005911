@@ -42,7 +42,11 @@ export default function Tiki_Ok() {
                             flexDirection: 'row',
                             alignItems: 'center',
                         }}>
-                            <HiMinusSm style={{ backgroundColor: '#C4C4C4' }} color='#808080' /><Text style={{ marginLeft: 10, marginRight: 10, fontWeight: 'bold' }}>1</Text><BsPlus style={{ backgroundColor: '#C4C4C4' }} color='#000' />
+                            <HiMinusSm style={{ backgroundColor: '#C4C4C4' }} color='#808080' />
+                            
+                            
+                            <Text style={{ marginLeft: 10, marginRight: 10, fontWeight: 'bold' }}>1</Text>
+                            <BsPlus style={{ backgroundColor: '#C4C4C4' }} color='#000' />
 
                         </View>
                         <Text style={{ fontSize: 12, color: '#134FEC', fontWeight: 'bold' }}>Mua sau</Text>
